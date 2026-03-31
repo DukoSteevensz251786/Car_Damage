@@ -108,7 +108,7 @@ def download_model_if_needed(path):
     if not MODEL_DRIVE_ID:
         print("ERROR: Model file not found and MODEL_DRIVE_ID env var is not set.", file=sys.stderr)
         return False
-
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     print(f"Model not found. Downloading from Google Drive (ID: {MODEL_DRIVE_ID})...")
     try:
         import gdown
