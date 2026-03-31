@@ -1,0 +1,11 @@
+flask
+flask-cors
+tensorflow==2.15.0
+tf-keras
+scikit-image
+numpy
+pillow
+requests
+opencv-python-headless
+gdown
+gunicorn
