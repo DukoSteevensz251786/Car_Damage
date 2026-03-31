@@ -1,7 +1,7 @@
 flask
 flask-cors
-tensorflow
-tf-keras
+tensorflow==2.16.2
+tf-keras==2.16.0
 scikit-image
 numpy
 pillow
