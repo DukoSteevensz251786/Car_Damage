@@ -129,6 +129,10 @@ model_path = DEFAULT_MODEL_PATH
 
 def load_model(path):
     global model
+    # ── Auto-download model on startup (runs under gunicorn too) ──────────────────
+    _startup_model_path = os.environ.get("MODEL_PATH", DEFAULT_MODEL_PATH)
+    download_model_if_needed(_startup_model_path)
+    load_model(_startup_model_path)
     try:
         import tf_keras
         from tf_keras.models import load_model as keras_load
