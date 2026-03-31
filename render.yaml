@@ -2,11 +2,12 @@ services:
   - type: web
     name: carcheck-pro
     runtime: python
+    pythonVersion: "3.11.9"
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn server:app --bind 0.0.0.0:$PORT --timeout 120 --workers 1
     envVars:
       - key: MODEL_DRIVE_ID
-        sync: false        # you fill this in on the Render dashboard
+        sync: false
     disk:
       name: model-storage
       mountPath: /data
