@@ -22,7 +22,8 @@ import traceback
 from pathlib import Path
 
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
-
+import tf_keras
+from tf_keras.models import load_model 
 import cv2
 import numpy as np
 import requests
@@ -132,10 +133,9 @@ model_path = DEFAULT_MODEL_PATH
 def load_model(path):
     global model
     try:
-        import tf_keras
-        from tf_keras.models import load_model as keras_load
+        
         print(f"Loading model from: {path}")
-        model = keras_load(path, compile=False)
+        model = tf.keras.models.load_model(path, compile=False)
         print(f"Model loaded successfully. Input shape: {model.input_shape}")
         return True
     except Exception as e:
