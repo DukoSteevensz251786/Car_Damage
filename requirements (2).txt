@@ -1,6 +1,6 @@
 flask
 flask-cors
-tensorflow==2.19.1
+tensorflow
 tf-keras
 scikit-image
 numpy
