@@ -15,6 +15,8 @@ import argparse
 import base64
 import io
 import os
+os.environ['TF_USE_LEGACY_KERAS'] = '1'
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 import sys
 import traceback
 from pathlib import Path
