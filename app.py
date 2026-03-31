@@ -135,7 +135,7 @@ def load_model(path):
     try:
         
         print(f"Loading model from: {path}")
-        model = tf.keras.models.load_model(path, compile=False)
+        model = tf_keras.models.load_model(path, compile=False)
         print(f"Model loaded successfully. Input shape: {model.input_shape}")
         return True
     except Exception as e:
